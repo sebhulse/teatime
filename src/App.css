@@ -13,6 +13,11 @@
   }
 }
 
+.list {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,8 +29,21 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.pink {
+  background-color: #fb8261;
+}
+
+.blue {
+  background-color: #61dafb;
+}
+
+.Recommendation-button {
+  min-height: 10vh;
+  font-size: calc(7px + 2vmin);
+  padding: 1.25rem;
+  border: 0px;
+  border-radius: 5px;
+  color: #282c34;
 }
 
 @keyframes App-logo-spin {
