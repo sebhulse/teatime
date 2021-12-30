@@ -86,7 +86,7 @@ function App() {
       {
         id: 16,
 
-        name: "Just Hummus",
+        name: "*Just* Hummus",
       },
       {
         id: 17,
@@ -119,7 +119,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Teatime Ideas</h1>
-        <p>Press the button for a teatime meal idea.</p>
+        <p>Press the button for a teatime meal suggestion.</p>
         <div>
           <button
             className="Recommendation-button blue"
@@ -128,13 +128,13 @@ function App() {
               randomFood();
             }}
           >
-            Get Recommendation
+            Get Suggestion
           </button>
-          <p>Idea number {count} is:</p>
+          <p>Suggestion number {count} is:</p>
           <div className="border">{state.foodItems[activeFood].name}</div>
         </div>
         <button onClick={handleOpen} className="Recommendation-button pink">
-          See all options {show ? "-" : "+"}
+          See all {state.foodItems.length} options {show ? "-" : "+"}
         </button>
         {show && (
           <div>
@@ -147,6 +147,26 @@ function App() {
             </ul>
           </div>
         )}
+        <p className="link">
+          See the source code{" "}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/sebhulse/teatime"
+          >
+            here
+          </a>
+          . Made with ♡ by{" "}
+          <a
+            className="link"
+            target="_blank"
+            rel="noreferrer"
+            href="https://sebhulse.com"
+          >
+            Seb Hulse
+          </a>
+          .
+        </p>
       </header>
     </div>
   );
