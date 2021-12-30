@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
   const state = {
     foodItems: [
       {
@@ -34,15 +33,83 @@ function App() {
 
         name: "Baked Marinated Tofu",
       },
+      {
+        id: 6,
+
+        name: "Sunday Roast",
+      },
+      {
+        id: 7,
+
+        name: "Curry",
+      },
+      {
+        id: 8,
+
+        name: "Burgers",
+      },
+      {
+        id: 9,
+
+        name: "Mushroom Pie",
+      },
+      {
+        id: 10,
+
+        name: "Potato Layer",
+      },
+      {
+        id: 11,
+
+        name: "Pizza",
+      },
+      {
+        id: 12,
+
+        name: "Risotto",
+      },
+      {
+        id: 13,
+
+        name: "Soup",
+      },
+      {
+        id: 14,
+
+        name: "Sausages and Mash",
+      },
+      {
+        id: 15,
+
+        name: "Spag Bol",
+      },
+      {
+        id: 16,
+
+        name: "Just Hummus",
+      },
+      {
+        id: 17,
+
+        name: "Fried Rice and Veg/Beans",
+      },
+      {
+        id: 18,
+
+        name: "Tapas (Hummus, Potatoes, Sausages, Salad etc)",
+      },
     ],
     displayFoods: true,
   };
 
-  const [activeFood, setActiveFood] = useState(0);
+  const [count, setCount] = useState(0);
+  const [activeFood, setActiveFood] = useState(
+    Math.floor(Math.random() * state.foodItems.length)
+  );
   const [show, setShow] = useState(false);
 
   const handleOpen = () => {
-    setShow(!show); // Toggle accordion
+    setShow(!show);
   };
   function randomFood() {
     const len = state.foodItems.length;
@@ -64,7 +131,7 @@ function App() {
             Get Recommendation
           </button>
           <p>Idea number {count} is:</p>
-          <p>{state.foodItems[activeFood].name}</p>
+          <div className="border">{state.foodItems[activeFood].name}</div>
         </div>
         <button onClick={handleOpen} className="Recommendation-button pink">
           See all options {show ? "-" : "+"}
